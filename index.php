@@ -64,13 +64,13 @@
     $a++;
     echo "<br><br>newer a = $a";
     */
+    /*
     echo '<h4>Operatory porównania</h4>';
     // $a = 5;
     $a = 'Z';
     // $b = 10;
     $b = 'A';
     echo "a = $a, b= $b<br><br>";
-
     echo "<br>$a == $b : ";
     var_dump($a == $b);
     echo "<br>$a != <> $b : ";
@@ -83,13 +83,37 @@
     var_dump($a > $b);
     echo "<br>$a >= $b : ";
     var_dump($a >= $b);
-
-
     echo "<br><br><br>$a === $b : ";
     var_dump($a === $b);
     echo "<br><br><br>$a !== $b : ";
     var_dump($a !== $b);
-    
+    */
+    echo '<h4>Operatory logiczne</h4>';
+
+    $a = false;
+    $b = true;
+
+    echo "a = ";
+    var_dump($a);
+    echo "b = ";
+    var_dump($b);
+
+    echo "<br><br>OR : ";
+    var_dump($a or $b);
+    echo "<br><br>AND : ";
+    var_dump($a and $b);
+    echo "<br><br>OR || : ";
+    var_dump($a || $b);
+    echo "<br><br>AND && : ";
+    var_dump($a && $b);
+    echo "<br><br>XOR : ";
+    var_dump($a xor $b);
+    echo "<br><br>NOT : ";
+    var_dump(!$a);
+
+    echo '<br><br> Wynik = ';
+    var_dump((true || false) && !false)
+
 
   ?> 
   <!-- <form action="index.php" method="get">
