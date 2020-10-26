@@ -14,21 +14,48 @@
 </style>
   <h1>Hi php</h1>
 
-
   <?php
-    if(isset($_GET['name'])){
+    // if(isset($_GET['name'])){
+    //   $name = $_GET['name'];
+    // } else {
+    //   $name = 'unknown';
+    // }
+    // echo '<h2>hello, my name is ' . $name . '</h2>';
 
-      $name = $_GET['name'];
-    } else {
-      $name = 'unknown';
-    }
+    $var = 'Hello';
+    $var = 'Hi';
+    define('CONSTANT', 'World');
+    echo "$var " . CONSTANT;
 
-    echo '<h2>hello, my name is ' . $name . '</h2>';
-  ?>  
-  <form action="index.php" method="get">
+    echo '<br><br><br>';
+    
+    $text = 'ABCD';
+    $num = 126;
+    $float = 13.31;
+    $bool = false;
+
+    echo "$text, $num, $float, ";
+    echo '<br>';
+    var_dump($bool);
+    echo '<br>';
+    $textNum = "30";
+    echo $textNum + $num;
+    echo '<br>';
+    var_dump(is_numeric($textNum));
+
+    // echo $text;
+    $a = 'text';
+
+    echo '<br><br>' . $a;
+    echo '<br><br>' . $$a;
+    
+
+
+  ?> 
+  <!-- <form action="index.php" method="get">
     <input type="text" name="name" id="">
     <input type="submit" value="Send">
-  </form>
+  </form> -->
 
 
 </body>
