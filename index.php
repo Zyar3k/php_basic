@@ -45,8 +45,8 @@
     echo '<br><br>' . $a;
     echo '<br><br>' . $$a;
     */
+    /*
     echo '<h4>Operatory arytmetyczne</h4>';
-
     $a = 10;
     $b = 7;
     echo "a = $a, b= $b";
@@ -57,15 +57,39 @@
     echo "<br>Modulo = " . ($a % $b);
     echo "<br>Potęgowanie = " . pow(2 , 3);
     echo "<br>Pierwiastek = " . sqrt(9);
-
     echo "<br><br>Kolejność = " . ((2 + 2) * 2);
-
     // $a = $a +10;
     $a += 10;
     echo "<br><br>new a = $a";
     $a++;
     echo "<br><br>newer a = $a";
+    */
+    echo '<h4>Operatory porównania</h4>';
+    // $a = 5;
+    $a = 'Z';
+    // $b = 10;
+    $b = 'A';
+    echo "a = $a, b= $b<br><br>";
 
+    echo "<br>$a == $b : ";
+    var_dump($a == $b);
+    echo "<br>$a != <> $b : ";
+    var_dump($a <> $b);
+    echo "<br>$a < $b : ";
+    var_dump($a < $b);
+    echo "<br>$a <= $b : ";
+    var_dump($a <= $b);
+    echo "<br>$a > $b : ";
+    var_dump($a > $b);
+    echo "<br>$a >= $b : ";
+    var_dump($a >= $b);
+
+
+    echo "<br><br><br>$a === $b : ";
+    var_dump($a === $b);
+    echo "<br><br><br>$a !== $b : ";
+    var_dump($a !== $b);
+    
 
   ?> 
   <!-- <form action="index.php" method="get">
