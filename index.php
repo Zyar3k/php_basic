@@ -12,6 +12,11 @@
     text-align: center;
   }
 </style>
+
+<form action="index.php" method="get">
+    <input type="number" name="num" id="">
+    <input type="submit" value="OK">
+  </form>
   <?php
     /*
     <h4>intro</h4>
@@ -88,16 +93,14 @@
     echo "<br><br><br>$a !== $b : ";
     var_dump($a !== $b);
     */
+    /*
     echo '<h4>Operatory logiczne</h4>';
-
     $a = false;
     $b = true;
-
     echo "a = ";
     var_dump($a);
     echo "b = ";
     var_dump($b);
-
     echo "<br><br>OR : ";
     var_dump($a or $b);
     echo "<br><br>AND : ";
@@ -110,16 +113,35 @@
     var_dump($a xor $b);
     echo "<br><br>NOT : ";
     var_dump(!$a);
-
     echo '<br><br> Wynik = ';
-    var_dump((true || false) && !false)
+    var_dump((true || false) && !false);
+    */
+    echo '<h4>instrukcje warunkowe</h4>';
+    if (isset($_GET['num']) and is_numeric($_GET['num'])) {
+      $a = $_GET['num'];
+      echo "<br>Liczba = $a";
+      if ($a % 2 == 0) {
+        echo "<br><br>Liczba jest parzysta";
+      } else {
+        echo "<br><br>Liczba jest nieparzysta";
+      }
+      
+      if ($a > 0) {
+        echo "<br><br>Liczba jest większa od zera";
+      } elseif ($a == 0) {
+        echo "<br><br>Liczba jest zerem";
+      } else {
+        echo "<br><br>Liczba jest mniejsza od zera";
+      }
 
+      echo $a % 3 == 0 ? '<br>Liczba jest podzielna przez 3.' : '<br>Liczba jest niepodzielna przez 3.';
+
+    } else {
+      echo '<br> Nie podano liczby';
+    }
 
   ?> 
-  <!-- <form action="index.php" method="get">
-    <input type="text" name="name" id="">
-    <input type="submit" value="Send">
-  </form> -->
+  
 
 
 </body>
