@@ -12,7 +12,7 @@
     text-align: center;
   }
 </style>
-
+<h4>Instrukcje wyboru</h4>
 <form action="index.php" method="get">
     <input type="number" name="num" id="">
     <input type="submit" value="OK">
@@ -116,6 +116,7 @@
     echo '<br><br> Wynik = ';
     var_dump((true || false) && !false);
     */
+    /*
     echo '<h4>instrukcje warunkowe</h4>';
     if (isset($_GET['num']) and is_numeric($_GET['num'])) {
       $a = $_GET['num'];
@@ -139,10 +140,49 @@
     } else {
       echo '<br> Nie podano liczby';
     }
+    */
+
+    // echo '<h4>Instrukcje wyboru</h4>';
+
+    if (isset($_GET['num']) and is_numeric($_GET['num'])) {
+      $day = $_GET['num'];
+      echo "<br> Dzień = $day, ";
+
+      switch ($day) {
+        case 1:
+          echo 'poniedzialek';
+          break;
+        case 2:
+          echo 'wtorek';
+          break;
+        case 3:
+          echo 'środa';
+          break;
+        case 4:
+          echo 'czwartek';
+          break;
+        case 5:
+          echo 'piątek';
+          break;
+        case 5: case 6:
+          echo 'weekend';
+          break;
+        
+        default:
+        # code...
+        echo 'nie ma takiego dnia';
+          break;
+      }
+    } else {
+      echo '<br> Nie podano dnia';
+    }
 
   ?> 
   
-
+  <!-- <form action="index.php" method="get">
+    <input type="number" name="num" id="">
+    <input type="submit" value="OK">
+  </form> -->
 
 </body>
 </html>
