@@ -26,7 +26,7 @@
 
   }
 </style>
-<h4>pętle</h4>
+<h4>instrukcja skoku</h4>
 <form action="index.php" method="get">
     <input type="number" name="num" id="">
     <input type="submit" value="OK">
@@ -200,22 +200,31 @@
       echo '<tr>';
       echo '<td>';
       
-      $i = $a;
       //while
+      $i = $a;
       while ($i > 0) {
         echo "$i<br>";
+        if ($i == 5) {
+          break;
+        }
         $i--;
       }
 
       echo '</td>';
       echo '<td>';
 
-      $i = $a;
       // do while
+      $i = $a;
       do {
-        echo "$i<br>";
+        if ($i % 2 == 1) {
+          goto lab1;
+        }
+        echo "$i - parzysta <br>";
         $i--;
-
+        continue;
+        lab1:
+        echo "$i - nieparzysta <br>";
+        $i--;
       } while ($i > 0);
       
       echo '</td>';
@@ -223,6 +232,9 @@
       
       // for
       for (; $a > 0; $a--) { 
+        if ($a % 2 == 1) {
+          continue;
+        }
         echo "$a<br>";
       }
 
