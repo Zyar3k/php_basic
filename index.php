@@ -29,12 +29,43 @@
 
   }
 </style>
-<h4>tablice</h4>
-<!-- <form action="index.php" method="get">
-    <input type="number" name="num" id="">
-    <input type="submit" value="OK">
-  </form> -->
+<h4>Średnia ocen</h4>
+  <form action="index.php" method="get">
+    <input type="text" name="num" id="">
+    <input type="submit" value="Check">
+  </form>
   <?php
+
+  if (isset($_GET['num']) and !empty($_GET['num'])) {
+    $a = $_GET['num'];
+    // echo "<br> Dzień = $a, <br><br>";
+    $tab = explode(",", $a);
+    // var_dump($tab);
+    $sum = 0;
+    $i = 0;
+
+    if (is_array($tab)) {
+      # code...
+      foreach ($tab as $key => $item) {
+        if (is_numeric($item) and $item >= 1 and $item <= 6) {
+          $sum += $item;
+          $i++;
+        }
+      }
+    }
+
+    if ($i > 0) {
+      echo "<br>Średnia ocen wynosi: " . round($sum / $i, 2);
+    } else {
+      echo "<br>Nie podano żdnej oceny";
+    }
+    
+
+
+  } else {
+    echo '<br> Nie podano ocen!';
+  }
+
     /*
     <h4>intro</h4>
     if(isset($_GET['name'])){
@@ -246,7 +277,7 @@
       echo '<br> Nie podano liczby';
     }
     */
-
+    /*
     $tab = array('Arek', 'Kasia', 'Ania');
 
     echo $tab[0];
@@ -290,7 +321,25 @@
     echo '<br>';
     echo '<br>';
     print_r($tab);
+    */
+    /*
+    $tab = array('Arek', 'Kasia', 'Karolina', 'Adam', 'Maciek');
 
+    echo 'for:<br><br>';
+    // echo count($tab);
+    for ($i=0; $i < count($tab); $i++) { 
+      echo $tab[$i];
+      echo '<br>';
+    } 
+
+    echo '<br><br>foreach:<br><br>';
+
+    foreach ($tab as $key => $item) {
+      # code...
+      echo "$key - $item";
+      echo '<br>';
+    }
+    */
   ?> 
   
   <!-- <form action="index.php" method="get">
