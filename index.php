@@ -13,6 +13,9 @@
   }
 
   table {
+    display: inline-block;
+    border: 1px solid #999;
+    border-collapse: collapse;
     margin: 0 auto;
     text-align: center;
   }
@@ -22,15 +25,15 @@
 
   th, td {
     border: 1px solid grey;
-    padding: 10px;
+    padding: 5px;
 
   }
 </style>
-<h4>instrukcja skoku</h4>
-<form action="index.php" method="get">
+<h4>tablice</h4>
+<!-- <form action="index.php" method="get">
     <input type="number" name="num" id="">
     <input type="submit" value="OK">
-  </form>
+  </form> -->
   <?php
     /*
     <h4>intro</h4>
@@ -191,15 +194,14 @@
       echo '<br> Nie podano dnia';
     }
     */
-
+    /*
     if (isset($_GET['num']) and is_numeric($_GET['num'])) {
       $a = $_GET['num'];
       echo "<br> Dzień = $a, <br><br>";
 
       echo '<table><tr><th>while</th><th>do while</th><th>for</th></tr>';
       echo '<tr>';
-      echo '<td>';
-      
+      echo '<td>';      
       //while
       $i = $a;
       while ($i > 0) {
@@ -237,15 +239,58 @@
         }
         echo "$a<br>";
       }
-
       echo '</td>';
       echo '</tr>';
       echo '</table>';
-
-
     } else {
       echo '<br> Nie podano liczby';
     }
+    */
+
+    $tab = array('Arek', 'Kasia', 'Ania');
+
+    echo $tab[0];
+    echo '<br>';
+    echo $tab[1];
+    echo '<br>';
+    $tab[2] = 'Karolina';
+    echo $tab[2];
+    echo '<br>';
+    echo '<br>';
+
+    $tab2[0] = 5;
+    $tab2[1] = 10;
+    $tab2[2] = 15;
+
+    echo $tab2[0];
+    echo '<br>';
+    echo $tab2[1];
+    echo '<br>';
+    $tab2[2] = 'Karolina';
+    echo $tab2[2];
+    echo '<br>';
+    echo '<br>';
+
+    $tab3 = array('red'=> 'czerwpny', 'green'=>'zielony', 'blue'=> 'niebieski');
+    echo $tab3['red'];
+    echo '<br>';
+    echo $tab3['green'];
+    echo '<br>';
+    $tab3['blue'] = 'blue';
+    echo $tab3['blue'];
+    echo '<br>';
+    echo '<br>';
+    
+    $tab4['language']['programing'] = 'php';
+    echo $tab4['language']['programing'];
+    echo '<br>';
+    echo '<br>';
+    
+    var_dump($tab);
+    echo '<br>';
+    echo '<br>';
+    print_r($tab);
+
   ?> 
   
   <!-- <form action="index.php" method="get">
