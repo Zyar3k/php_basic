@@ -11,8 +11,22 @@
     font-family: sans-serif;
     text-align: center;
   }
+
+  table {
+    margin: 0 auto;
+    text-align: center;
+  }
+  th {
+    width: 100px;
+  }
+
+  th, td {
+    border: 1px solid grey;
+    padding: 10px;
+
+  }
 </style>
-<h4>Instrukcje wyboru</h4>
+<h4>pętle</h4>
 <form action="index.php" method="get">
     <input type="number" name="num" id="">
     <input type="submit" value="OK">
@@ -143,7 +157,7 @@
     */
 
     // echo '<h4>Instrukcje wyboru</h4>';
-
+    /*
     if (isset($_GET['num']) and is_numeric($_GET['num'])) {
       $day = $_GET['num'];
       echo "<br> Dzień = $day, ";
@@ -176,7 +190,50 @@
     } else {
       echo '<br> Nie podano dnia';
     }
+    */
 
+    if (isset($_GET['num']) and is_numeric($_GET['num'])) {
+      $a = $_GET['num'];
+      echo "<br> Dzień = $a, <br><br>";
+
+      echo '<table><tr><th>while</th><th>do while</th><th>for</th></tr>';
+      echo '<tr>';
+      echo '<td>';
+      
+      $i = $a;
+      //while
+      while ($i > 0) {
+        echo "$i<br>";
+        $i--;
+      }
+
+      echo '</td>';
+      echo '<td>';
+
+      $i = $a;
+      // do while
+      do {
+        echo "$i<br>";
+        $i--;
+
+      } while ($i > 0);
+      
+      echo '</td>';
+      echo '<td>';
+      
+      // for
+      for (; $a > 0; $a--) { 
+        echo "$a<br>";
+      }
+
+      echo '</td>';
+      echo '</tr>';
+      echo '</table>';
+
+
+    } else {
+      echo '<br> Nie podano liczby';
+    }
   ?> 
   
   <!-- <form action="index.php" method="get">
